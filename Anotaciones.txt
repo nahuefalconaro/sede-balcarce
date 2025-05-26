@@ -1,0 +1,76 @@
+Comandos:
+  npm init -y // la y, es para darle si a todo y que no nos pregunte
+  npm install express cors
+  npm install -D typescript ts-node-dev @types/node @types/express
+  npx tsc --init
+
+Que es NPM?
+- Manejador de dependencias en node.
+
+Que es una API?
+ - un servicio/sistema que permite que las aplicaciones se comuniquen.
+ - Capa intermedia entre fron y back.
+ - Provee informacion al frontend y a otros servicios, en formato JSON.
+
+Que es una ruta? /character/2 - /
+ -  Punto de entrada a mi api, la cual va a ejecutar el metodo asociado.
+
+Que es un VERBO?
+
+-ABM: ALTA-BAJA-MODIFICACION(GET-POST-PUT)
+-CRUD: CREATE-READ-UPDATE-DELETE
+
+ La accion que le dice a la api como interactuar
+- GET: obtener informacion desde la api. - / - /clientes - /status/{id}
+- POST: Creacion de nuevo recurso. - / - /client - /status
+- PUT/UPDATE: Modificacion de un recurso existente - /{id} - /client/{id} - /status/{id} 
+- DELETE: Eliminacion de un recurso. /{id}
+
+Que es EXPRESS?
+ - Framework de node que nos simplifica la creacion de una API
+Que es CORS?
+    - Reglas que definen quien puede consumir nuestra API
+
+Arquitecturas???!?!?!
+
+Que es un controller?
+
+Que es Inyeccion de dependencias?
+
+Que es un DTO?
+
+Que es un Service?
+
+Que es un Repository?
+
+
+
+Enunciado API 1:
+
+UTILS:
+- "dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules src/app.ts",
+
+- Comandos:
+    npm init -y // la y, es para darle si a todo y que no nos pregunte
+    npm install express cors
+    npm install -D typescript ts-node-dev @types/node @types/express
+    npx tsc --init
+
+    import express  from "express";
+    import cors from "cors";
+    import axios from "axios";
+    const app = express();
+
+    app.use(cors());
+    app.listen(3000, () => {
+        console.log("Server running on port 3000");
+    });
+
+
+- Crear API inicial, el cual tenga 4 endpoints de verbo GET.
+2 endpoints proveen informacion propia.
+    - 1 sin parametro
+    - 1 con parametro
+2 endpoints deberan consumir una api publica.
+    - 1 sin parametro
+    - 1 con parametro
