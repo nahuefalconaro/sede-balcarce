@@ -1,31 +1,22 @@
 import express  from "express";
 import cors from "cors";
-import axios from "axios";
-const app = express();
+import { router } from "./routes/clients.routes";
+import { router as routerMovies } from "./routes/movies.route";
+import expressListEndpoints from "express-list-endpoints";
 
+const app = express();
+app.use(express.json());
 app.use(cors());
+
+
+//localhost:3000/clients
+// app.use("/clients", router)
+//localhost:3000/movies/
+app.use("/movies", routerMovies)
+
+const endpoints = expressListEndpoints(routerMovies);//nos muestra por consola los endpoints declarados
+
 app.listen(3000, () => {
     console.log("Server running on port 3000");
-});
-
-app.route("/test").get((req, res) => {
-    res.send("Hello World!");
-});
-
-app.route("/clients").get(async (req, res) => {
-    try{
-        const response = await axios.get("https://rickandmortyapi.com/api/character/2")
-        res.json(response.data)
-    } catch (error) {
-        res.status(500).send(error)
-    }
-});
-
-app.route("/character/:id").get(async (req, res) => {
-   try{
-     const response = await axios.get(`https://rickandmortyapi.com/api/character/${req.params.id}`)
-     res.json(response.data)
-   } catch (error) {
-       res.status(500).send(error)
-   } 
+    console.log(endpoints);
 });

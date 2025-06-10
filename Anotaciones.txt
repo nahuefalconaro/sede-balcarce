@@ -31,18 +31,16 @@ Que es EXPRESS?
 Que es CORS?
     - Reglas que definen quien puede consumir nuestra API
 
-Arquitecturas???!?!?!
-
 Que es un controller?
-
-Que es Inyeccion de dependencias?
+  - Punto de entrada a nuestra API, encargada de recibir los request http y decidir que hacer.
 
 Que es un DTO?
 
 Que es un Service?
 
-Que es un Repository?
+Que es Inyeccion de dependencias?
 
+Que es un Repository?
 
 
 Enunciado API 1:
@@ -74,3 +72,9 @@ UTILS:
 2 endpoints deberan consumir una api publica.
     - 1 sin parametro
     - 1 con parametro
+
+
+
+- Todos los verbos /get /post /put /delete
+- Recurso por ID (route param) /get/:id  /get/terror
+- Recurso por titulo, o autor, o estrenos o lo que sea (query params) /get?title=The Truman Show
