@@ -58,7 +58,6 @@ import { MoviesService } from '../services/movies.service';
         res.json({message: "devuelvo todas las peliculas"})
     }
 
-    let a = new Date
 
     getByParams = (req: Request, res: Response) => {
         const titulo = req.params.titulo;
