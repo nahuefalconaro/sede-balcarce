@@ -2,6 +2,12 @@
  * @swagger
  * components:
  *   schemas:
+ * 
+ *     GenreEnum:
+ *       type: string
+ *       enum: [Drama, Action, Crime, Adventure, Sci-Fi, Romance, Biography, History, Horror, Mystery, Thriller, Fantasy, Animation, War, Comedy, Musical]
+ *       description: Géneros posibles de la película
+ * 
  *     Movie:
  *       type: object
  *       required:
@@ -24,7 +30,7 @@
  *         year:
  *           type: integer
  *           format: int32
- *           minimum: 1888  # Año de la primera película
+ *           minimum: 1888
  *           maximum: 2100
  *           example: 1994
  *           description: Año de lanzamiento
@@ -36,7 +42,7 @@
  *           type: integer
  *           format: int32
  *           minimum: 1
- *           maximum: 240  # 4 horas como máximo
+ *           maximum: 240
  *           example: 142
  *           description: Duración en minutos
  *         poster:
@@ -47,9 +53,7 @@
  *         genre:
  *           type: array
  *           items:
- *             type: string
- *             enum: [Drama, Action, Crime, Adventure, Sci-Fi, Romance, Biography, History, 
- *                   Horror, Mystery, Thriller, Fantasy, Animation, War, Comedy, Musical]
+ *             $ref: '#/components/schemas/GenreEnum'
  *           example: ["Drama"]
  *           description: Géneros de la película
  *         rate:
