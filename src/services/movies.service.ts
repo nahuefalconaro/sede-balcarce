@@ -1,12 +1,29 @@
-import * as fs from 'fs';
-import * as path from 'path';
+import { MoviesRepository } from "../repositories/movies.repository";
 
 
-const dataPath = path.join(__dirname, '../repositories/movies.json');
+
 export class MoviesService{
-
-    get(){
-        const data = fs.readFileSync(dataPath, 'utf-8');
-        return JSON.parse(data);
+    constructor(private moviesRepository = new MoviesRepository()) { 
     }
+
+    get = () => this.moviesRepository.getAll();
+
+    getById = (id: string) => this.moviesRepository.getById(id);
+
+    add = (movieDto: MovieDto) => {
+        const movie: Movie = new Movie(
+            Math.random().toString(36).substring(2, 15), // Generating a random ID
+            movieDto.title,
+            movieDto.year,
+            movieDto.director,
+            movieDto.duration,
+            movieDto.poster,
+            movieDto.genre,
+            movieDto.rate
+        );
+
+        this.moviesRepository.add(movie);
+        return movie;
+    };
+    
 }

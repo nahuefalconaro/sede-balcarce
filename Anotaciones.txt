@@ -34,14 +34,20 @@ Que es CORS?
 Que es un controller?
   - Punto de entrada a nuestra API, encargada de recibir los request http y decidir que hacer.
 
-Que es un DTO?
 
 Que es un Service?
+    - Se encarga de contener toda la logica de negocio de nuestra API
 
 Que es Inyeccion de dependencias?
+    - Mediante la inyeccion de dependencias el framework nos instancia una clase para poder usarla en otra clase y asi no tener que instanciarla manualmente.
 
+Que es Models?
+ - Capa de datos donde se almacena clases persistentes y DTOs
+Que es un DTO?
+ - Data Transfer Object:
 Que es un Repository?
 
+QUE ES EL CONJUNTO DE TODAS ESTAS COSAS? Arquitectura? 
 
 Enunciado API 1:
 
