@@ -1,43 +1,13 @@
 import {Request, Response} from 'express';
 import { MoviesService } from '../services/movies.service';
 
-    /**
-     * @swagger
-     * /movies:
-     *   get:
-     *     summary: Obtiene todas las películas
-     *     tags: [Movies]
-     *     responses:
-     *       200:
-     *         description: Lista de películas
-     *         content:
-     *           application/json:
-     *             schema:
-     *               type: array
-     *               items:
-     *                 $ref: '#/components/schemas/Movie'
-     */
+
  export class MoviesController {
 
     constructor(private moviesService = new MoviesService()) { 
     }   
 
-     /**
-     * @swagger
-     * /movies:
-     *   get:
-     *     summary: Obtiene todas las películas
-     *     tags: [Movies]
-     *     responses:
-     *       200:
-     *         description: Lista de películas
-     *         content:
-     *           application/json:
-     *             schema:
-     *               type: array
-     *               items:
-     *                 $ref: '#/components/schemas/Movie'
-     */
+
     get = (req: Request, res: Response) => {
         res.send(this.moviesService.get());
     }

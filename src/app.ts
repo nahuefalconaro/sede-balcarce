@@ -23,6 +23,6 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 const endpoints = expressListEndpoints(routerMovies);//nos muestra por consola los endpoints declarados
 
 app.listen(3000, () => {
-    console.log("Server running on port 3000");
     console.log(endpoints);
+    console.log("Server running on port http.//localhost:3000");
 });
