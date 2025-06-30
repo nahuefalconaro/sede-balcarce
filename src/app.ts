@@ -1,7 +1,7 @@
 import express  from "express";
 import cors from "cors";
-import { router } from "./routes/clients.routes";
 import { router as routerMovies } from "./routes/movies.route";
+import { router as routerClient } from "./routes/clients.routes";
 import expressListEndpoints from "express-list-endpoints";
 import swaggerUi from 'swagger-ui-express';
 import { specs } from '../swagger.config';
@@ -15,6 +15,7 @@ app.use(cors());
 // app.use("/clients", router)
 //localhost:3000/movies/
 app.use("/movies", routerMovies)
+app.use("/clients", routerClient)
 
 
 // Swagger docs
